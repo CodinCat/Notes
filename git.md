@@ -3,6 +3,10 @@
 git pull --rebase <remote> <branch>
 ```
 
+##Rebase & Merge
+![](http://i.imgur.com/IEAtoMD.png)
+http://blog.sourcetreeapp.com/2012/08/21/merge-or-rebase/
+
 ##Tags
 給一個commit標上tag
 ```
@@ -19,6 +23,9 @@ Push all tags
 ```
 git push origin --tags
 ```
+
+##Cheat Sheet
+![](http://i.imgur.com/xBLgwXj.png)
 
 ------
 
