@@ -24,6 +24,9 @@ Push all tags
 git push origin --tags
 ```
 
+##Undo
+https://github.com/blog/2019-how-to-undo-almost-anything-with-git
+
 ##Cheat Sheet
 ![](http://i.imgur.com/xBLgwXj.png)
 
