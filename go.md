@@ -63,6 +63,13 @@ func handler(w http.ResponseWriter, r *http.Request) {
 ```
 remainPart會拿到`example.com/hello/`以後的所有東西
 
+```go
+func handler(w http.ResponseWriter, r *http.Request) {
+    value := r.FormValue("name")
+    fmt.Fprintf(w, "%s", value)
+}
+```
+
 ##Mux
 ```go
 func main() {
