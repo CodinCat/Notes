@@ -108,3 +108,41 @@ func hello(w http.ResponseWriter, r *http.Request) {
     // ...
 }
 ```
+
+#html/template
+
+##基本Layout用法
+
+layout.html: 
+```html
+<html>
+<head>
+    <title>hello</title>
+</head>
+<body>
+    <header>
+        Hello world
+    </header>
+    <main>
+        {{template "content"}}
+    </main>
+</body>
+</html>
+```
+
+index.html: 
+```html
+{{define "content"}}
+    Main content goes here
+{{end}}
+```
+
+main.go:
+```go
+func handler(w http.ResponseWriter, r *http.Request) {
+    tmpl, err := template.ParseFiles("layout.html", "index.html")
+    err = tmpl.Execute(w, nil)
+    
+    // ...
+}
+```
