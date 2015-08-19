@@ -25,10 +25,36 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 ```go
 http.HandleFunc("/hello", handler)
 ```
-pattern裡最後有加上斜線的話，沒斜線的訪問會被自動加上斜線，所以不管有沒有加都會match到：  
+*pattern裡最後有加上斜線的話，沒斜線的訪問會被自動加上斜線*，所以不管有沒有加都會match到：  
 （不管用`example.com/hello`還是`example.com/hello/`訪問，都會自動導向到`example.com/hello/`）
 ```go
 http.HandleFunc("/hello/", handler)
+```
+
+以下範例函式同時處理兩種情況，不管訪問`/hello`還是`/hello/`都能處理，且網址不會被跳轉：
+```go
+func main() {
+    handle("/hello", helloHandler)
+    handle("/world/", worldHandler)
+    http.ListenAndServe(":8000", nil)
+}
+
+func handle(pattern string, handler func(http.ResponseWriter, *http.Request)) {
+	http.HandleFunc(pattern, handler)
+	
+	if len(pattern) == 1 {
+		return
+	}
+
+	if pattern[len(pattern) - 1:] == "/" {
+	    //如果傳進來的pattern是像 /example/
+	    //就補上沒有斜線版本的 /example
+		http.HandleFunc(pattern[:len(pattern) - 1], handler)
+	} else {
+	    //反之補上有斜線版本的
+		http.HandleFunc(pattern + "/", handler)
+	}
+}
 ```
 
 ##檢查Request型態範例
