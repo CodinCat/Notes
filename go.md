@@ -57,6 +57,17 @@ func handle(pattern string, handler func(http.ResponseWriter, *http.Request)) {
 }
 ```
 
+##Serve一個static資料夾範例
+```go
+func main() {
+    http.HandleFunc("/public/", publicHandler)
+}
+
+func publicHandler(w http.ResponseWriter, r *http.Request) {
+    http.ServeFile(w, r, r.URL.Path[1:])
+}
+```
+
 ##檢查Request型態範例
 ```go
 func handler(w http.ResponseWriter, r *http.Request) {
