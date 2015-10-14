@@ -25,6 +25,10 @@ git push origin --tags
 ```
 
 ##Undo
+取消目前還沒add(unstaged)的所有修改
+```
+git checkout -- .
+```
 https://github.com/blog/2019-how-to-undo-almost-anything-with-git
 
 ##Cheat Sheet
