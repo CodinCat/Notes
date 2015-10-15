@@ -3,6 +3,12 @@
 git pull --rebase <remote> <branch>
 ```
 
+##Branch
+clone下來之後其實所有tag跟branch都有抓下來，只輸入`git branch`並不會顯示，用`git branch -a`就能看到，要切換到某個branch：
+```
+git checkout -b mybranch origin/mybranch
+```
+
 ##Rebase & Merge
 ![](http://i.imgur.com/IEAtoMD.png)
 http://blog.sourcetreeapp.com/2012/08/21/merge-or-rebase/
