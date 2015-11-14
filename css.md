@@ -60,6 +60,24 @@ flex-basis: auto;
 }
 ```
 
+##內層水平垂直置中於父容器
+
+```html
+<div class="box">
+    <div class="inner">置中</div>
+</div>
+```
+
+```css
+.box {
+    display: flex;
+    justify-content: center; /* 水平置中 */
+}
+.inner {
+    align-self: center; /* 垂直置中 */
+}
+```
+
 #others
 
 ##圖片置中於一容器內
