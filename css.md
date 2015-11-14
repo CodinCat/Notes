@@ -1,3 +1,5 @@
+#flex
+
 ##平分填滿子元素高
 
 在`.fill-height`已有一個高度的情況下：
@@ -55,5 +57,30 @@ flex-basis: auto;
 }
 .flex-fill {
     flex: 1 1 auto;
+}
+```
+
+#others
+
+##圖片置中於一容器內
+
+（假設container已有一個寬高）
+```html
+<div class="container">
+    <img src="test.png">
+</div>
+```
+
+```css
+.container {
+    position: relative;
+}
+.container img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin auto;
 }
 ```
