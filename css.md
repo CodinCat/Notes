@@ -102,3 +102,16 @@ flex-basis: auto;
     margin auto;
 }
 ```
+
+
+# Tricks
+
+## 漸層文字
+
+```css
+.gradient-text {
+    background: linear-gradient(to right,#3DDEEF 0%, #CA0170 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+```
