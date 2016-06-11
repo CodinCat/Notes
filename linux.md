@@ -9,3 +9,20 @@
 接著mount進來  
 `sudo mkdir /volume1`  
 `sudo mount /dev/xvdf /volume1`
+
+### Make it permanent
+
+`sudo vim /etc/fstab`  
+`/dev/xvdf   /volume1   ext4   defaults,nofail   0   2`  
+
+# Swap
+
+`sudo fallocate -l 4G /swapfile`  
+`sudo chmod 600 /swapfile`  
+`sudo mkswap /swapfile`  
+`sudo swapon /swapfile`  
+
+### Make it permanent
+
+`sudo vim /etc/fstab`  
+`/swapfile   none    swap    sw    0   0`  
