@@ -26,3 +26,13 @@
 
 `sudo vim /etc/fstab`  
 `/swapfile   none    swap    sw    0   0`  
+
+# Misc
+
+#### 把資料夾底下包含子資料夾內的所有檔案，搬移到另一個資料夾根目錄
+
+`find ~/folder1/ -type f -print0 | xargs -0 mv -t ~/folder2`
+
+#### 把除了某類型以外的所有檔案刪除
+
+`find . -type f ! -name '*.txt' -delete`
