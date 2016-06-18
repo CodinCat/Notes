@@ -9,6 +9,15 @@ clone下來之後其實所有tag跟branch都有抓下來，只輸入`git branch`
 git checkout -b mybranch origin/mybranch
 ```
 
+把目前還未commit的修改轉移到另一個branch
+
+```
+git stash
+git checkout -b branch2
+# or just checkout to an existing branch
+git stash pop
+```
+
 ##Rebase & Merge
 ![](http://i.imgur.com/IEAtoMD.png)
 http://blog.sourcetreeapp.com/2012/08/21/merge-or-rebase/
