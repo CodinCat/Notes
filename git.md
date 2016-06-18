@@ -15,7 +15,9 @@ git checkout -b mybranch origin/mybranch
 git stash
 git checkout -b branch2
 # or just checkout to an existing branch
+
 git stash pop
+# or ust git stash apply
 ```
 
 ##Rebase & Merge
