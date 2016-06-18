@@ -3,6 +3,15 @@
 git pull --rebase <remote> <branch>
 ```
 
+若在pull之前有修改還不想commit，可以先commit後再reset
+
+```
+git add .
+git commit -m "this commit will be removed"
+git pull --rebase
+git reset HEAD~1
+```
+
 ##Branch
 clone下來之後其實所有tag跟branch都有抓下來，只輸入`git branch`並不會顯示，用`git branch -a`就能看到，要切換到某個branch：
 ```
@@ -15,6 +24,7 @@ git checkout -b mybranch origin/mybranch
 git stash list
 git stash apply stash@{2}
 git stash drop stash@{0}
+git stash --include-untracked
 ```
 
 把目前還未commit的修改轉移到另一個branch
