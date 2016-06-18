@@ -9,6 +9,14 @@ clone下來之後其實所有tag跟branch都有抓下來，只輸入`git branch`
 git checkout -b mybranch origin/mybranch
 ```
 
+##Stash
+
+```
+git stash list
+git stash apply stash@{2}
+git stash drop stash@{0}
+```
+
 把目前還未commit的修改轉移到另一個branch
 
 ```
@@ -17,7 +25,7 @@ git checkout -b branch2
 # or just checkout to an existing branch
 
 git stash pop
-# or ust git stash apply
+# or use git stash apply
 ```
 
 ##Rebase & Merge
