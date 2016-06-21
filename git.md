@@ -5,7 +5,7 @@ git pull --rebase <remote> <branch>
 
 若在pull之前有修改還不想commit，可以先commit後再reset
 
-```
+```sh
 git add .
 git commit -m "this commit will be removed"
 git pull --rebase
@@ -20,16 +20,16 @@ git checkout -b mybranch origin/mybranch
 
 ##Stash
 
-```
+```sh
 git stash list
 git stash apply stash@{2}
 git stash drop stash@{0}
-git stash --include-untracked
+git stash --include-untracked # or git stash save -u
 ```
 
 把目前還未commit的修改轉移到另一個branch
 
-```
+```sh
 git stash
 git checkout -b branch2
 # or just checkout to an existing branch
