@@ -18,6 +18,18 @@ clone下來之後其實所有tag跟branch都有抓下來，只輸入`git branch`
 git checkout -b mybranch origin/mybranch
 ```
 
+##Commit
+Amend author
+```sh
+git commit --amend --author='CodinCat <codincat@codeit.today>'
+```
+
+##Revert
+回復到某個commit（會產生一個新的revert commit）
+```
+git revert <commit>
+```
+
 ##Stash
 
 ```sh
