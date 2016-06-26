@@ -51,6 +51,15 @@ git stash pop
 ```
 
 ##Rebase & Merge
+
+###捨棄本地的修改，強制更新為remote版本
+
+```sh
+git fetch --all
+git reset --hard origin/master
+# git reset --hard <remote>/<branch>
+```
+
 ![](http://i.imgur.com/IEAtoMD.png)
 http://blog.sourcetreeapp.com/2012/08/21/merge-or-rebase/
 
