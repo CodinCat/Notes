@@ -157,3 +157,31 @@ func handler(w http.ResponseWriter, r *http.Request) {
     // ...
 }
 ```
+
+#Struct
+
+##JSON-like nested struct
+
+```json
+{
+  "id": 1,
+  "name": "Tit Petric",
+  "address": {
+    "street": "Viska cesta 49c",
+    "zip": "1000",
+    "city": "Ljubljana",
+    "country": "Slovenia"
+  }
+}
+```
+
+```go
+type Person struct {
+    Id      int    `json:"id"`
+    Name    string `json:"name"`
+    Address struct {
+        City    string `json:"city"`
+        Country string `json:"country"`
+    } `json:"address"`
+}
+```
