@@ -68,3 +68,21 @@ let myFoo = OBJ.foo
 OBJ.foo() // Object {}
 myFoo() // Window
 ```
+
+## typeof and let/const
+
+```js
+// OK
+if (typeof foo !== 'undefined') {
+    // ...
+}
+var foo = true
+```
+
+```js
+// ERROR!
+if (typeof foo !== 'undefined') {
+    
+}
+let foo = true
+```
