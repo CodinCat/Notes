@@ -44,6 +44,8 @@ myFunction(...args)
 ## iterator / generator / symbol
 
 實作`Symbol.iterator`後便能使用 for ... of
+
+Generator: 
 ```js
 let foo = {}
 
@@ -57,7 +59,44 @@ foo[Symbol.iterator] = function* () {
 for (let val of foo) {
     console.log(val)
 }
-// 1 2 3
+```
+
+Or: 
+```js
+let bar = {}
+
+bar[Symbol.iterator] = function () {
+    return {
+        i: 0,
+        next() {
+            if (this.i > 10) return { done: true }
+            return { value: this.i++, done: false }
+        }
+    }
+}
+
+for (let val of bar) {
+    console.log(val)
+}
+```
+
+fibonacci generator: 
+```js
+function* fibonacci() {
+    let [prev, curr] = [1, 1]
+    while (true) {
+        [prev, curr] = [curr, prev + curr]
+        yield curr
+    }
+}
+
+for (let n of fibonacci()) {
+    if (n < 100) {
+        console.log(n)
+    } else {
+        break
+    }
+}
 ```
 
 # Misc
