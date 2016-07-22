@@ -41,6 +41,25 @@ myFunction(...args)
 
 ```
 
+## iterator / generator / symbol
+
+實作`Symbol.iterator`後便能使用 for ... of
+```js
+let foo = {}
+
+foo[Symbol.iterator] = function* () {
+    let i = 0
+    yield ++i
+    yield ++i
+    yield ++i
+}
+
+for (let val of foo) {
+    console.log(val)
+}
+// 1 2 3
+```
+
 # Misc
 
 ### bind
@@ -67,22 +86,4 @@ let myFoo = OBJ.foo
 
 OBJ.foo() // Object {}
 myFoo() // Window
-```
-
-## typeof and let/const
-
-```js
-// OK
-if (typeof foo !== 'undefined') {
-    // ...
-}
-var foo = true
-```
-
-```js
-// ERROR!
-if (typeof foo !== 'undefined') {
-    
-}
-let foo = true
 ```
