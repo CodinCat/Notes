@@ -1,6 +1,8 @@
 ##Better pull
-```
+```sh
+#git stash
 git pull --rebase <remote> <branch>
+#git stash pop
 ```
 
 若在pull之前有修改還不想commit，可以先commit後再reset
