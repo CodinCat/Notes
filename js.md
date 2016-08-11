@@ -41,17 +41,21 @@ myFunction(...args)
 
 ```
 
-用Spread operator來複製物件或陣列
+用Spread operator來複製、結合物件或陣列
 
 ```js
 let ary1 = [0, 1, 2]
 let ary2 = [...ary1]
 
 let msg1 = { text: 'hello' }
-let msg2 = {...msg1}
+let msg2 = { ...msg1 }
+
+let obj1 = { foo: 'foo' }
+let obj2 = { bar: 'bar' }
+let obj3 = { ...obj1, ...obj2 } // merge obj1 & obj2
 
 // 用於方法傳值
-function add({...obj}) {
+function add({ ...obj }) {
   obj.n++
   console.log(obj.n) // 6
 }
