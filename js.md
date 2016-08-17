@@ -153,3 +153,19 @@ let myFoo = OBJ.foo
 OBJ.foo() // Object {}
 myFoo() // Window
 ```
+
+bind每次都會回傳一個不同的參考，因此若要用來使用`addEventListener`和`removeEventListener`就必須留下同一個參考
+```js
+function myFunc() {
+    console.log('hello world')
+}
+
+let f1 = myFunc().bind(this)
+let f2 = myFunc().bind(this)
+
+f1 == f2 // false
+
+el.addEventListener('click', myFunc().bind(this))
+el.removeEventListener('click', myFunc().bind(this)) // doesn't work
+
+```
