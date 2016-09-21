@@ -14,6 +14,23 @@ git pull --rebase
 git reset HEAD~1
 ```
 
+##Commit
+Amend author
+
+```sh
+git commit --amend --author='CodinCat <codincat@codeit.today>'
+```
+
+取消最新的commit，但保留修改的檔案
+```sh
+git reset HEAD~ --soft
+```
+
+完全刪除最新的commit
+```sh
+git reset HEAD~ --hard
+```
+
 ##Branch
 clone下來之後其實所有tag跟branch都有抓下來，只輸入`git branch`並不會顯示，用`git branch -a`就能看到，要切換到某個branch：
 ```
@@ -28,13 +45,6 @@ git branch branch2
 # 再移掉master裡的commit就行
 git reset HEAD~ --hard
 git checkout branch2
-```
-
-##Commit
-Amend author
-
-```sh
-git commit --amend --author='CodinCat <codincat@codeit.today>'
 ```
 
 ##Revert
