@@ -28,12 +28,12 @@
 flex: 1;
 
 等於
-flex: 1 1 auto;
+flex: 1 1 0%;
 
 等於
 flex-grow: 1;
 flex-shrink: 1;
-flex-basis: auto;
+flex-basis: 0%;
 ```
 
 ##填滿剩餘高度
