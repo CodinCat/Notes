@@ -115,3 +115,8 @@ flex-basis: 0%;
     -webkit-text-fill-color: transparent;
 }
 ```
+
+# Bookmark
+
+各種垂直置中
+http://webdesignerwall.com/tutorials/css-vertical-centering-everything-need-know
