@@ -169,3 +169,8 @@ el.addEventListener('click', myFunc().bind(this))
 el.removeEventListener('click', myFunc().bind(this)) // doesn't work
 
 ```
+
+### IE 11 detection:
+```js
+const isIE11 = !!window.MSInputMethodContext && !!document.documentMode
+```
