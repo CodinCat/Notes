@@ -4,8 +4,8 @@
 
 ```js
 let person = {
-    first: 'John',
-    last: 'Cena'
+  first: 'John',
+  last: 'Cena'
 }
 
 let { first, last } = person
@@ -15,7 +15,7 @@ console.log(first, last) // "John" "Cena"
 // =====
 
 function printLastName({ last }) {
-    console.log(last)
+  console.log(last)
 }
 
 printLastName(person) // "Cena"
@@ -33,7 +33,7 @@ console.log(y, z) // 0 1
 
 ```js
 function myFunction(x, y, z) {
-    console.log(x, y, z)
+  console.log(x, y, z)
 }
 
 let args = [0, 1, 2]
@@ -77,14 +77,14 @@ Generator:
 let foo = {}
 
 foo[Symbol.iterator] = function* () {
-    let i = 0
-    yield ++i
-    yield ++i
-    yield ++i
+  let i = 0
+  yield ++i
+  yield ++i
+  yield ++i
 }
 
 for (let val of foo) {
-    console.log(val)
+  console.log(val)
 }
 ```
 
@@ -93,36 +93,36 @@ Or:
 let bar = {}
 
 bar[Symbol.iterator] = function () {
-    return {
-        i: 0,
-        next() {
-            if (this.i > 10) return { done: true }
-            return { value: this.i++, done: false }
-        }
+  return {
+    i: 0,
+    next() {
+      if (this.i > 10) return { done: true }
+      return { value: this.i++, done: false }
     }
+  }
 }
 
 for (let val of bar) {
-    console.log(val)
+  console.log(val)
 }
 ```
 
 fibonacci generator: 
 ```js
 function* fibonacci() {
-    let [prev, curr] = [1, 1]
-    while (true) {
-        [prev, curr] = [curr, prev + curr]
-        yield curr
-    }
+  let [prev, curr] = [1, 1]
+  while (true) {
+    [prev, curr] = [curr, prev + curr]
+    yield curr
+  }
 }
 
 for (let n of fibonacci()) {
-    if (n < 100) {
-        console.log(n)
-    } else {
-        break
-    }
+  if (n < 100) {
+    console.log(n)
+  } else {
+    break
+  }
 }
 ```
 
@@ -145,7 +145,7 @@ $2('foo') // correct
 const OBJ = {}
 
 OBJ.foo = function () {
-    console.log(this)
+  console.log(this)
 }
 
 let myFoo = OBJ.foo
@@ -157,7 +157,7 @@ myFoo() // Window
 bind每次都會回傳一個不同的參考，因此若要用來使用`addEventListener`和`removeEventListener`就必須留下同一個參考
 ```js
 function myFunc() {
-    console.log('hello world')
+  console.log('hello world')
 }
 
 let f1 = myFunc().bind(this)
