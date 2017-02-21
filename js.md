@@ -126,6 +126,58 @@ for (let n of fibonacci()) {
 }
 ```
 
+# Clean Code
+
+## switch case
+
+```js
+const buildCard = (type) => {
+  let card = {}
+  switch (type) {
+    case types.A:
+      card.type = 'A'
+      // ...
+      break
+     
+    case types.B:
+      card.type = 'B'
+      // ...
+      break
+     
+    default:
+      // ...
+  }
+  return card
+}
+```
+
+vs
+
+```js
+const cards = {
+  A: () => ({ type: 'A' }),
+  B: () => ({ type: 'B' }),
+  DEFAULT: () => ({ type: 'na' })
+}
+
+const buildCard = (type) => (cards[type] || cards['DEFAULT'])()
+```
+
+or mutating + in a same scope
+
+```js
+const buildCard = (type) => {
+  let card = {}
+  const cards = {
+    A: () => { card.type = 'A' },
+    B: () => { card.type = 'B' },
+    DEFAULT: () => { card.type = 'na' }
+  }
+  ;(cards[type] || cards['DEFAULT'])()
+  return card
+}
+```
+
 # Misc
 
 ### bind
@@ -169,6 +221,8 @@ el.addEventListener('click', myFunc().bind(this))
 el.removeEventListener('click', myFunc().bind(this)) // doesn't work
 
 ```
+
+# Snippets
 
 ### IE 11 detection:
 ```js
