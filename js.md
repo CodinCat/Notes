@@ -178,6 +178,29 @@ const buildCard = (type) => {
 }
 ```
 
+## filter an object
+
+Creating an object based on an array.
+
+```js
+const filterObject = (obj, keys) => {
+  const result = {}
+  keys.forEach(key => {
+    result[key] = obj[key]
+  })
+  return result
+}
+```
+
+vs
+
+```js
+const filterObject = (obj, keys) => keys.reduce((result, key) => {
+  result[key] = obj[key]
+  return result
+}, {})
+```
+
 # Misc
 
 ### bind
