@@ -1,4 +1,4 @@
-##Better pull
+## Better pull
 ```sh
 #git stash
 git pull --rebase <remote> <branch>
@@ -14,7 +14,8 @@ git pull --rebase
 git reset HEAD~1
 ```
 
-##Commit
+## Commit
+
 Amend author
 
 ```sh
@@ -31,7 +32,8 @@ git reset HEAD~ --soft
 git reset HEAD~ --hard
 ```
 
-##Branch
+## Branch
+
 clone下來之後其實所有tag跟branch都有抓下來，只輸入`git branch`並不會顯示，用`git branch -a`就能看到，要切換到某個branch：
 ```
 git checkout -b mybranch origin/mybranch
@@ -47,14 +49,14 @@ git reset HEAD~ --hard
 git checkout branch2
 ```
 
-##Revert
+## Revert
 回復到某個commit（會產生一個新的revert commit）
 
 ```
 git revert <commit>
 ```
 
-##Stash
+## Stash
 
 ```sh
 git stash list
@@ -74,9 +76,9 @@ git stash pop
 # or use git stash apply
 ```
 
-##Rebase & Merge
+## Rebase & Merge
 
-###捨棄本地的修改，強制更新為remote版本
+### 捨棄本地的修改，強制更新為remote版本
 
 ```sh
 git fetch --all
@@ -87,7 +89,7 @@ git reset --hard origin/master
 ![](http://i.imgur.com/IEAtoMD.png)
 http://blog.sourcetreeapp.com/2012/08/21/merge-or-rebase/
 
-##Tags
+## Tags
 給一個commit標上tag
 ```
 git tag -a v1.0 <commit hash>
@@ -104,19 +106,19 @@ Push all tags
 git push origin --tags
 ```
 
-##Undo
+## Undo
 取消目前還沒add(unstaged)的所有修改
 ```
 git checkout -- .
 ```
 https://github.com/blog/2019-how-to-undo-almost-anything-with-git
 
-##Cheat Sheet
+## Cheat Sheet
 ![](http://i.imgur.com/xBLgwXj.png)
 
 ------
 
-##Set up SSH
+## Set up SSH
 ```
 ssh-keygen
 ls -a ~/.ssh
