@@ -49,6 +49,12 @@ git reset HEAD~ --hard
 git checkout branch2
 ```
 
+把目前還沒stage也還沒commit的修改移到新的branch。直接checkout即可
+
+```sh
+git checkout -b mybranch
+```
+
 ## Revert
 回復到某個commit（會產生一個新的revert commit）
 
@@ -65,7 +71,7 @@ git stash drop stash@{0}
 git stash --include-untracked # or git stash save -u
 ```
 
-把目前還未commit的修改轉移到另一個branch
+把目前還未commit的修改轉移到另一個branch，方法2
 
 ```sh
 git stash
