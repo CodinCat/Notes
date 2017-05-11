@@ -62,6 +62,12 @@ git checkout -b mybranch
 git revert <commit>
 ```
 
+取消掉特定的commit（會產生一個新的revert commit）
+
+```
+git revert --strategy resolve <commit>
+```
+
 ## Stash
 
 ```sh
