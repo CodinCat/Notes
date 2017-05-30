@@ -1,6 +1,6 @@
-#net/http
+# net/http
 
-##HandleFunc
+## HandleFunc
 這樣會Match所有請求：
 ```go
 http.HandleFunc("/", handler)
@@ -57,7 +57,7 @@ func handle(pattern string, handler func(http.ResponseWriter, *http.Request)) {
 }
 ```
 
-##Serve一個static資料夾範例
+## Serve一個static資料夾範例
 ```go
 func main() {
     http.HandleFunc("/public/", publicHandler)
@@ -68,7 +68,7 @@ func publicHandler(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-##檢查Request型態範例
+## 檢查Request型態範例
 ```go
 func handler(w http.ResponseWriter, r *http.Request) {
     switch r.Method {
@@ -86,7 +86,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-##簡易的取得參數
+## 簡易的取得參數
 ```go
 func main() {
     http.HandleFunc("/hello/", handler)
@@ -107,7 +107,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-##Mux
+## Mux
 ```go
 func main() {
     mux := http.NewServeMux()
@@ -120,9 +120,9 @@ func hello(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-#html/template
+# html/template
 
-##基本Layout用法
+## 基本Layout用法
 
 layout.html: 
 ```html
@@ -158,9 +158,9 @@ func handler(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-#Struct
+# Struct
 
-##JSON-like nested struct
+## JSON-like nested struct
 
 ```json
 {
