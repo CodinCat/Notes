@@ -1,3 +1,17 @@
+# OpenSSL
+
+Create a self-signed certificate:
+
+```sh
+openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 365
+```
+
+Decrypt the private key:
+
+```sh
+openssl rsa -in key.pem -out decrypted_key.pem
+```
+
 # Add new volumes
 
 `lsblk` 顯示可用的disk devices
