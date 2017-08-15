@@ -90,6 +90,15 @@ git stash pop
 
 ## Rebase & Merge
 
+### Edit a specific commit
+
+```sh
+git rebase --interactive 'hashxxxxx^'
+# edit...
+git commit --amend
+git rebase --continue
+```
+
 ### 捨棄本地的修改，強制更新為remote版本
 
 ```sh
