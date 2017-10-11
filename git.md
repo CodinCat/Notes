@@ -128,10 +128,20 @@ git push origin --tags
 ```
 
 ## Undo
+
 取消目前還沒add(unstaged)的所有修改
+
 ```
 git checkout -- .
 ```
+
+刪除 untracked 的檔案
+
+```sh
+git clean -n # 列出會被刪除的檔案
+git clean -f -d # -d 包含資料夾
+```
+
 https://github.com/blog/2019-how-to-undo-almost-anything-with-git
 
 ## Cheat Sheet
