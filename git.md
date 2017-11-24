@@ -1,4 +1,3 @@
-## Better pull
 ```sh
 # git stash
 git pull --rebase <remote> <branch>
@@ -66,6 +65,13 @@ git checkout branch2
 
 ```sh
 git checkout -b mybranch
+```
+
+## cherry-pick
+
+cherry pick 一個 range，從 A 到 B（包含 hashA 跟 B）
+```
+git cherry-pick hashA^..hashB
 ```
 
 ## Stash
