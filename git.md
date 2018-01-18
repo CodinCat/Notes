@@ -148,6 +148,12 @@ git clean -n # 列出會被刪除的檔案
 git clean -f -d # -d 包含資料夾
 ```
 
+取消特定 commit 裡的特定檔案
+
+```
+git checkout hashabcde~1 -- file1.js
+```
+
 https://github.com/blog/2019-how-to-undo-almost-anything-with-git
 
 ## Cheat Sheet
