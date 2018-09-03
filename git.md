@@ -32,19 +32,6 @@ git reset HEAD~ --soft
 git reset HEAD~ --hard
 ```
 
-## Revert
-回復到某個commit（會產生一個新的revert commit）
-
-```
-git revert <commit>
-```
-
-取消掉特定的commit（會產生一個新的revert commit）
-
-```
-git revert --strategy resolve <commit>
-```
-
 ## Branch
 
 clone下來之後其實所有tag跟branch都有抓下來，只輸入`git branch`並不會顯示，用`git branch -a`就能看到，要切換到某個branch：
