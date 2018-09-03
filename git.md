@@ -1,9 +1,3 @@
-```sh
-# git stash
-git pull --rebase <remote> <branch>
-# git stash pop
-```
-
 若在pull之前有修改還不想commit，可以先commit後再reset
 
 ```sh
@@ -11,6 +5,13 @@ git add .
 git commit -m "this commit will be removed"
 git pull --rebase
 git reset HEAD~1
+```
+
+把別的 branch 裡的某 folder 的內容 sync 進現在的 workspace
+
+```sh
+# 當前的 some/path 會變成 dev branch some/path 的內容
+git checkout dev -- some/path
 ```
 
 ## Commit
